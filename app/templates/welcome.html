@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block conteudo %}
+<main class="flex-shrink-0">
+    <div class="container-sm">
+        <h1 class="mt-5">{{titulo}}</h1>
+        <p class="lead">
+            Há no mínimo 8 tipos de situação onde o peso do cidadão se encontra. São esses:<br> IMC menor que 16 – Magreza extrema (grave);<br> IMC de 16 a menor que 17 – Magreza moderada;<br> IMC de 17 a menor que 18,5 – Magreza leve;<br> IMC de 18,5
+            a menor que 25 – saudável;<br> IMC de 25 a menor que 30 – Sobre peso;<br> IMC de 30 a menor que 35 – Obesidade Grau I;<br> IMC de 35 a menor que 40 – Obesidade Grau II;<br> IMC maior que 40 – Obesidade Grau III (considerada mórbida).<br> Os
+            malefícios de uma alimentação desregulada são inúmeras e todas podem levar a morte. Porém tem uma que se sobressai de todas e tem ficado mais famoso nos últimos tempos, a obesidade mórbida é onde o IMC está mais de 40, nesse caso o indivíduo
+            tem muitas complicações no corpo encurtando a expectativa de vida. É praticamente uma bola de neve gigante formada por um consumo exagerado de alimento, junto com a falta de exercícios que não estimula a queima de gordura e ainda com distúrbios
+            emocionais que favorecem a compulsão alimentar uma vez que a pessoa se sente bem comendo. Os sintomas dessa doença são bem cruéis deixando bem claro que a situação não está bem. Como tem muita gordura a pressão no peito e respectivamente no
+            pulmão faz com que o indivíduo tenha dificuldade de respirar, o peso também faz com que tenha dores no corpo mais precisamente costas, joelhos, pernas e ombros. Como se movimentar também chega a ser um problema, logo privar-se de limpar também
+            ocorre fazendo que tenha infecções fúngicas no corpo, e tendo que suportar tudo isso a depressão também entra em cena. O tratamento para tal doença é longo e exige muito do cidadão, tendo que frequentar um preparador físico para auxiliar em
+            seus exercícios, e nutricionista para fazer uma dieta bem rígida para parar com o vício e o costume de apenas comer alimentos calóricos, e isso por um longo tempo. Só assim para a pessoa ficar curada dessa doença crônica.
+        </p>
+
+
+        <form id="calculaImc" class="flex-shrink-0" name="calculadora" method="post" action="calculaImc">
+            <fieldset>
+                <h1>Vamos Calcular o seu IMC</h1>
+
+                <fieldset class="fieldset">
+                    <legend>Qual seu nome? </legend>
+                    <input type="text" name="nome" placeholder="Ex: Carlos" id="nome">
+                </fieldset>
+                <fieldset class="fieldset">
+                    <legend>Peso</legend>
+                    <input type="text" name="peso" placeholder="Ex: 70 em Kg" id="peso" onkeydown="validaTamanhoInput()"> <span class="span-erro" id="erroInputPeso">Número Maximo 3 caracteres </span>
+                </fieldset>
+
+                <fieldset class="fieldset">
+                    <legend>Altura</legend>
+                    <input type="text" name="altura" placeholder="Ex: 1.75 em cm" id="altura">
+                </fieldset>
+                <br>
+
+                <button id="btn" class="btn btn-success" onclick="clickBtn()">Calcular</button> <span id="resultadoTexto"></span> <span id="resultado"></span>
+        </form>
+
+    </div>
+</main>
+{% endblock %} {% block javascript%}
+<script src="/assets/js/welcome.js"></script>
+{% endblock %}
